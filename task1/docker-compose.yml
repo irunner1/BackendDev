@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  db:
+    container_name: task1_db
+    image: mariadb
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./server:/docker-entrypoint-initdb.d
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
+  server:
+    container_name: task1_server
+    build: ./server
+    restart: always
+    volumes:
+      - ./server:/var/www/html
+    ports:
+      - "8080:80"
