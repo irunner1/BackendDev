@@ -29,17 +29,12 @@
     if (isset($_GET['array'])) {
         $array = explode(",", $_GET["array"]);
         echo "<p>Массив</p>";
-
-        echo "<p>[";
         echo implode(", ", $array);
-        echo "]</p>";
 
         echo "<p>Отсортированный массив</p>";
         $array = insertSort($array);
-        
-        echo "<p>[";
+
         echo implode(", ", $array);
-        echo "]</p>";
     } 
     else {
         echo '<p>Отсутствует переменная: ?array=</p>';
