@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    container_name: task1_db
+    container_name: task2_db
     image: mariadb
     restart: always
     ports:
@@ -9,9 +9,9 @@ services:
     volumes:
       - ./server:/docker-entrypoint-initdb.d
     environment:
-      - MARIADB_ROOT_PASSWORD: example
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
   server:
-    container_name: task1_server
+    container_name: task2_server
     build: ./server
     restart: always
     volumes:
