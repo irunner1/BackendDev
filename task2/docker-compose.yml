@@ -8,6 +8,8 @@ services:
       - "3306:3306"
     volumes:
       - ./server:/docker-entrypoint-initdb.d
+       - datadir:/var/lib/mysql
+
     environment:
       - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
   server:
@@ -18,3 +20,5 @@ services:
       - ./server:/var/www/html
     ports:
       - "8080:80"
+volumes:
+  datadir:
