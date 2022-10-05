@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        li, a, button {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            color: #ebebeb;
+            text-decoration: none;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background-color: #24252A;
+            height: 100px;
+           
+        }
+        .header_menu {
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .nav_links {
+            background-color: #24252A;
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+        .nav_links li {
+            background-color: #24252A;
+            display: inline-block;
+            padding: 0px 20px;
+        }
+        .nav_links li a {
+            background-color: #24252A;
+            transition: all 0.3s ease 0s;
+        }
+
+        @media all and (max-width: 700px) {
+            .header {
+                height: 250px;
+            }
+            .nav_links li {
+                margin: 0 0 30px 0;
+            }
+            .nav_links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="header_menu">
+            <ul class="nav_links">
+                <li><a href="Flex.html">Home</a> </li>
+                <li><a href="#About">Store</a> </li>
+                <li><a href="#Services">About</a></li>
+                <li><a href="#Contact/">Auth</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
