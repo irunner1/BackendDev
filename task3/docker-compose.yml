@@ -21,16 +21,33 @@ services:
     ports:
       - "8082:8082"
   db:
-    container_name: task3_db
-    image: mariadb
+    container_name: mysql
+    image: mysql
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - './db:/docker-entrypoint-initdb.d'
+      - datadir:/var/lib/mysql
     ports:
       - "3306:3306"
     command: --character-set-server=utf8mb4
-    volumes:
-      - ./server:/docker-entrypoint-initdb.d
-       - datadir:/var/lib/mysql
-    environment:
-      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
 volumes:
   datadir:
+
+
+    # db:
+  #   container_name: task3_db
+  #   image: mariadb
+  #   restart: always
+  #   ports:
+  #     - "3306:3306"
+  #   command: --character-set-server=utf8mb4
+  #   volumes:
+  #     - ./server:/docker-entrypoint-initdb.d
+  #     - datadir:/var/lib/mysql
+  #   environment:
+  #     - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1
