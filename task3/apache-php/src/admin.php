@@ -31,7 +31,7 @@
             ";
             }; ?>
         </table>
-        <br><a href="../dynamic/about.php">На главную</a>
+        <br><a href="../dynamic/index.php">На главную</a>
         <div>
             <?php $mysqli->close(); ?>
 </body>
