@@ -6,6 +6,7 @@ services:
     build: apache-php
     restart: always
     volumes:
+      - ./css:/var/www/html-dynamic/dynamic/css
       - ./apache-php/src:/var/www/html-dynamic/dynamic
       - ./apache-php/ports.conf:/etc/apache2/ports.conf
       - ./apache-php/000-default.conf:/etc/apache2/sites-available/000-default.conf

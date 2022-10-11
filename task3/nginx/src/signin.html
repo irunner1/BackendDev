@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Вход</title>
-  <!-- <link rel="stylesheet" href="../css/style.css" type="text/css" /> -->
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -18,7 +18,19 @@
         return decodeURIComponent(name[1]);
     }
   </script>
-  <div id="wblock">
+  <header  class="header">
+    <p class="text">Строительный магазин</p>
+    <nav class="header_menu">
+        <ul class="nav_links">
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="../dynamic/catalogue.php">Store</a> </li>
+            <li><a href="../dynamic/admin.php">About</a></li>
+            <li><a href="../static/signin.html">Auth</a></li>
+        </ul>
+    </nav>
+    </nav>
+  </header>
+  <div>
     <h1>Вход</h1>
     <input placeholder="login" type="text">
     <input placeholder="password" type="password">
@@ -32,5 +44,4 @@
     <br><a href="../dynamic/index.php">На главную</a>
   </div>
 </body>
-
 </html>

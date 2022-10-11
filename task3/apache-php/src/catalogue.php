@@ -8,7 +8,19 @@
 </head>
 
 <body>
-    <div id="wblock">
+    <header  class="header">
+        <p class="text">Строительный магазин</p>
+        <nav class="header_menu">
+            <ul class="nav_links">
+                <li><a href="index.html">Home</a> </li>
+                <li><a href="../dynamic/catalogue.php">Store</a> </li>
+                <li><a href="../dynamic/admin.php">About</a></li>
+                <li><a href="../static/signin.html">Auth</a></li>
+            </ul>
+        </nav>
+        </nav>
+    </header>
+    <div>
         <h1>Каталог</h1>
         <?php
             require_once '_helper.php';
@@ -37,5 +49,4 @@
     </div>
     <?php $mysqli->close(); ?>
 </body>
-
 </html>
