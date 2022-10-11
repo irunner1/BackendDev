@@ -5,7 +5,7 @@ GRANT SELECT,
     INSERT ON appDB.* TO 'user' @'%';
 FLUSH PRIVILEGES;
 USE appDB;
--- Tables
+
 CREATE TABLE IF NOT EXISTS users (
     ID INT(11) NOT NULL AUTO_INCREMENT,
     name VARCHAR(20) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS goods (
     cost INT(6) NOT NULL,
     PRIMARY KEY (ID)
 );
--- Admin
+
 INSERT INTO users (name, password)
 SELECT *
 FROM (
@@ -33,7 +33,7 @@ WHERE NOT EXISTS (
             AND password = 'admin1'
     )
 LIMIT 1;
--- Store
+
 INSERT INTO goods (title, description, cost)
 SELECT *
 FROM (

@@ -18,7 +18,7 @@
         ?>
         <table cellspacing="0">
             <tr>
-                <th>Игрушка</th>
+                <th>Товар</th>
                 <th>Описание</th>
                 <th>Цена</th>
             </tr>

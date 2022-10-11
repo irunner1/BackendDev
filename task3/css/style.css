@@ -10,7 +10,29 @@ li, a, button {
     font-size: 16px;
     color: #ebebeb;
     text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #10101E;
+}
+
+.block {
+    background: #10101E;
+    width: 100vh;
+    /* height: 50px; */
+    padding: 15px 10px;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    margin: 50px;
+}
+.text {
+    color: #fff;
+    font-size: 28px;
 }
 
 .header {
@@ -20,7 +42,6 @@ li, a, button {
     padding: 30px 10%;
     background-color: #24252A;
     height: 100px;
-   
 }
 .header_menu {
     position: relative;
@@ -28,29 +49,15 @@ li, a, button {
     margin-right: auto;
 }
 .nav_links {
-    background-color: #24252A;
     list-style: none;
-    display: flex;
-    flex-direction: row;
 }
 .nav_links li {
-    background-color: #24252A;
     display: inline-block;
     padding: 0px 20px;
 }
 .nav_links li a {
-    background-color: #24252A;
     transition: all 0.3s ease 0s;
 }
-
-@media all and (max-width: 700px) {
-    .header {
-        height: 250px;
-    }
-    .nav_links li {
-        margin: 0 0 30px 0;
-    }
-    .nav_links {
-        flex-direction: column;
-    }
+.nav_links li a:hover {
+    color: #0088a9;
 }
