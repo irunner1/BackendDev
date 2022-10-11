@@ -1,4 +1,4 @@
-# Задание
+# Задание для 2 работы
 
 <p>
     Используя серверную конфигурацию, разработанную в прошлой
@@ -22,6 +22,7 @@
 <p align="center">
     <img src="https://sun9-46.userapi.com/impg/1ByYojiqlqxGrP5qBcjCV1ho8zrewv2OBxVmMg/vbuboccBQuU.jpg?size=609x371&quality=96&sign=d0a5530b46e745f2a2ead0d47df0ef96&type=album" alt="Скриншот" width="600"/>
 </p>
+
 # Упражнение 2
 
 <p>
