@@ -5,7 +5,7 @@
 </p>
 Используются: 
 <ul> 
-    <li>docker bar</li>
+    <li>docker</li>
     <li>php</li>
     <li>html</li>
     <li>css</li>
