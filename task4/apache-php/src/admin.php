@@ -13,9 +13,8 @@
         <nav class="header_menu">
             <ul class="nav_links">
                 <li><a href="index.html">Home</a> </li>
-                <li><a href="../dynamic/catalogue.php">Store</a> </li>
-                <li><a href="../dynamic/admin.php">About</a></li>
-                <li><a href="../static/signin.html">Auth</a></li>
+                <li><a href="catalogue.php">Store</a> </li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
         </nav>
@@ -45,7 +44,7 @@
             ?>
         </table>
         <br>
-        <a href="../static/index.php">На главную</a>
+        <a href="index.php">На главную</a>
         <div>
             <?php $mysqli->close(); ?>
         </div>

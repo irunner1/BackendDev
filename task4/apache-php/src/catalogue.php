@@ -4,18 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Каталог</title>
-    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
-    <header  class="header">
+    <header class="header">
         <p class="text">Строительный магазин</p>
         <nav class="header_menu">
             <ul class="nav_links">
                 <li><a href="index.html">Home</a> </li>
-                <li><a href="../dynamic/catalogue.php">Store</a> </li>
-                <li><a href="../dynamic/admin.php">About</a></li>
-                <li><a href="../static/signin.html">Auth</a></li>
+                <li><a href="catalogue.php">Store</a> </li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
         </nav>
@@ -26,7 +25,7 @@
             require_once '_helper.php';
             $mysqli = openmysqli();
             $mysqli->set_charset('utf8mb4');
-            $result = $mysqli->query("select * from " . 'goods');
+            $result = $mysqli->query("select * from goods");
         ?>
         <table cellspacing="0">
             <tr>
@@ -34,18 +33,20 @@
                 <th>Описание</th>
                 <th>Цена</th>
             </tr>
-            <?php if ($result->num_rows > 0) foreach ($result as $good) {
-                echo "
-                    <tr>
-                        <td>" . $good['title'] . "</td>
-                        <td>" . $good['description'] . "</td>
-                        <td>" . $good['cost'] . " руб</td>
-                    </tr>
-                ";
-                }
-            else echo ''; ?>
+            <?php 
+                if ($result->num_rows > 0) foreach ($result as $good) {
+                    echo "
+                        <tr>
+                            <td>" . $good['title'] . "</td>
+                            <td>" . $good['description'] . "</td>
+                            <td>" . $good['cost'] . " руб</td>
+                        </tr>
+                    ";
+                    }
+                else echo ''; 
+            ?>
         </table>
-        <br><a href="../static/index.php">На главную</a>
+        <br><a href="index.php">На главную</a>
     </div>
     <?php $mysqli->close(); ?>
 </body>
