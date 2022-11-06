@@ -107,5 +107,4 @@
         $str = preg_replace('/^' . $usrName . ':/', '', $str);
         return $str;
     }
-
 ?>

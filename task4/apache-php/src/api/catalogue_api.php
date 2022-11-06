@@ -20,84 +20,83 @@
             outputStatus(2, 'Invalid Mode');
     }
     
-    function addItem()
-    {
+    function addItem() {
         if (!isset($_GET['name']) || !isset($_GET['cost']) || !isset($_GET['desc'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $toyName = $_GET['name'];
-        $toyDesc = $_GET['desc'];
-        $toyCost = $_GET['cost'];
-        $result = $mysqli->query("SELECT * FROM toys WHERE title = '{$toyName}';");
+        $goodName = $_GET['name'];
+        $goodDesc = $_GET['desc'];
+        $goodCost = $_GET['cost'];
+        $result = $mysqli->query("SELECT * FROM goods WHERE title = '{$goodName}';");
         if ($result->num_rows === 1) {
-            $message = $toyName . ' already exists';
+            $message = $goodName . ' already exists';
             outputStatus(1, $message);
         }
         else {
-        $query = "INSERT INTO toys (title, description, cost)
-            VALUES ('" . $toyName . "', '" . $toyDesc . "', " . $toyCost . ");";
+        $query = "INSERT INTO goods (title, description, cost)
+            VALUES ('" . $goodName . "', '" . $goodDesc . "', " . $goodCost . ");";
             $mysqli->query($query);
             $mysqli->close();
-            $message = 'Added ' . $toyName . ' with cost of ' . $toyCost;
+            $message = 'Added ' . $goodName . ' with cost of ' . $goodCost;
             outputStatus(0, $message);
         }
     }
-    function removeItemByName()
-    {
+
+    function removeItemByName() {
         if (!isset($_GET['name'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $toyName = $_GET['name'];
-        $result = $mysqli->query("SELECT * FROM toys WHERE title = '{$toyName}';");
+        $goodName = $_GET['name'];
+        $result = $mysqli->query("SELECT * FROM goods WHERE title = '{$goodName}';");
         if ($result->num_rows === 1) {
-            $query = "DELETE FROM toys WHERE title = '" . $toyName . "';";
+            $query = "DELETE FROM goods WHERE title = '" . $goodName . "';";
             $mysqli->query($query);
             $mysqli->close();
-            $message = 'Removed ' . $toyName;
+            $message = 'Removed ' . $goodName;
             outputStatus(0, $message);
         } else {
-            $message = $toyName . ' does not exist';
+            $message = $goodName . ' does not exist';
             outputStatus(1, $message);
         }
     }
-    function updateItemCostByName()
-    {
+    
+    function updateItemCostByName() {
         if (!isset($_GET['name']) || !isset($_GET['cost'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $toyName = $_GET['name'];
-        $toyCost = $_GET['cost'];
-        $result = $mysqli->query("SELECT * FROM toys WHERE title = '{$toyName}';");
+        $goodName = $_GET['name'];
+        $goodCost = $_GET['cost'];
+        $result = $mysqli->query("SELECT * FROM goods WHERE title = '{$goodName}';");
         if ($result->num_rows === 1) {
-            $query = "UPDATE toys SET cost = " . $toyCost . " WHERE title = '" . $toyName . "';";
+            $query = "UPDATE goods SET cost = " . $goodCost . " WHERE title = '" . $goodName . "';";
             $mysqli->query($query);
             $mysqli->close();
-            $message = 'Updated ' . $toyName . ' with cost of ' . $toyCost;
+            $message = 'Updated ' . $goodName . ' with cost of ' . $goodCost;
             outputStatus(0, $message);
         } else {
-            $message = $toyName . ' does not exist';
+            $message = $goodName . ' does not exist';
             outputStatus(1, $message);
         }
     }
-    function getItemByName()
-    {
+
+    function getItemByName() {
         if (!isset($_GET['name'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $toyName = $_GET['name'];
-        $query = "SELECT * FROM toys WHERE title = '{$toyName}';";
+        $goodName = $_GET['name'];
+        $query = "SELECT * FROM goods WHERE title = '{$goodName}';";
         $result = $mysqli->query($query);
         if ($result->num_rows === 1) {
-            foreach ($result as $toy) {
-                echo "{status: 0, name: '" . $toy['title'] . "', description: '" . $toy['description'] . "', cost: " . $toy['cost'] . "}";
+            foreach ($result as $good) {
+                echo "{status: 0, name: '" . $good['title'] . "', description: '" . $good['description'] . "', cost: " . $good['cost'] . "}";
             }
             $mysqli->close();
         } else {
-            $message = $toyName . ' does not exist';
+            $message = $goodName . ' does not exist';
             outputStatus(1, $message);
         }
     }
