@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-    <img src="https://sun9-70.userapi.com/impg/yQ4s62wyTJZJOQZRs7vj-QnwsbNCYfl_lzPNDA/raUNGtfGITw.jpg?size=339x271&quality=96&sign=4d9bf39af4870c89ab470b75e8b349d3&type=album" alt="Скриншот" width="600"/>
+    <img src="https://sun9-70.userapi.com/impg/yQ4s62wyTJZJOQZRs7vj-QnwsbNCYfl_lzPNDA/raUNGtfGITw.jpg?size=339x271&quality=96&sign=4d9bf39af4870c89ab470b75e8b349d3&type=album" alt="Скриншот" width="400"/>
 </p>
 
 <p>
