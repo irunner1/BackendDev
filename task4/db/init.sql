@@ -33,7 +33,7 @@ VALUES (
     (
         'user',
         '$apr1$5i1mg3ur$obDXxC/JHQyptMKFiXZDO1' -- password
-    ),
+    );
 
 INSERT INTO goods (title, description, cost)
 VALUES ('Гвозди', 'Гвозди строительные 4x100 мм без покрытия 1 кг', 110),
