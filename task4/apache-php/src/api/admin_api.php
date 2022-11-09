@@ -21,12 +21,14 @@
     }
     
     function createUser(){
-        if (!isset($_GET['name']) || !isset($_GET['pass'])) {
+        $data = file_get_contents('php://input');
+        $data = json_decode($data, true);
+        if (!isset($data['name']) || !isset($data['pass'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $usrName = $_GET['name'];
-        $usrPass = $_GET['pass'];
+        $usrName = $data['name'];
+        $usrPass = $data['pass'];
         $result = $mysqli->query("SELECT * FROM users WHERE name = '{$usrName}';");
         if ($result->num_rows === 1) {
             $message = 'User '. $usrName . ' already exists';
@@ -50,9 +52,13 @@
         $usrID = $_GET['id'];
         $result = $mysqli->query("SELECT * FROM users WHERE ID = '{$usrID}';");
         if ($result->num_rows === 1) {
+            $json = "";
             foreach ($result as $info) {
-                echo "{status: 0, name: '" . $info['name'] . "}";
+                $json = json_encode($info);
             }
+            $json[0] = "{";
+            $json .= "}";
+            echo $json;
             $mysqli->close();
         } else {
             $message = 'User ID '. $usrID . ' does not exist';
@@ -61,12 +67,14 @@
     }
 
     function updateUser() {
-        if (!isset($_GET['name']) || !isset($_GET['pass'])) {
+        $data = file_get_contents('php://input');
+        $data = json_decode($data, true);
+        if (!isset($data['name']) || !isset($data['pass'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $usrName = $_GET['name'];
-        $usrPass = $_GET['pass'];
+        $usrName = $data['name'];
+        $usrPass = $data['pass'];
         $result = $mysqli->query("SELECT * FROM users WHERE name = '{$usrName}';");
         if ($result->num_rows === 1) {
             $usrPass = generatePass($usrName, $usrPass);

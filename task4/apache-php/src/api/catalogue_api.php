@@ -21,13 +21,15 @@
     }
     
     function addItem() {
-        if (!isset($_GET['name']) || !isset($_GET['cost']) || !isset($_GET['desc'])) {
+        $data = file_get_contents('php://input');
+        $data = json_decode($data, true);
+        if (!isset($data['name']) || !isset($data['cost']) || !isset($data['desc'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $goodName = $_GET['name'];
-        $goodDesc = $_GET['desc'];
-        $goodCost = $_GET['cost'];
+        $goodName = $data['name'];
+        $goodDesc = $data['desc'];
+        $goodCost = $data['cost'];
         $result = $mysqli->query("SELECT * FROM goods WHERE title = '{$goodName}';");
         if ($result->num_rows === 1) {
             $message = $goodName . ' already exists';
@@ -63,12 +65,14 @@
     }
     
     function updateItemCostByName() {
-        if (!isset($_GET['name']) || !isset($_GET['cost'])) {
+        $data = file_get_contents('php://input');
+        $data = json_decode($data, true);
+        if (!isset($data['name']) || !isset($data['cost'])) {
             throw new Exception("No input provided");
         }
         $mysqli = openMysqli();
-        $goodName = $_GET['name'];
-        $goodCost = $_GET['cost'];
+        $goodName = $data['name'];
+        $goodCost = $data['cost'];
         $result = $mysqli->query("SELECT * FROM goods WHERE title = '{$goodName}';");
         if ($result->num_rows === 1) {
             $query = "UPDATE goods SET cost = " . $goodCost . " WHERE title = '" . $goodName . "';";
@@ -91,9 +95,11 @@
         $query = "SELECT * FROM goods WHERE title = '{$goodName}';";
         $result = $mysqli->query($query);
         if ($result->num_rows === 1) {
+            $json = "";
             foreach ($result as $good) {
-                echo "{status: 0, name: '" . $good['title'] . "', description: '" . $good['description'] . "', cost: " . $good['cost'] . "}";
+                $json = json_encode($good);
             }
+            echo $json;
             $mysqli->close();
         } else {
             $message = $goodName . ' does not exist';
