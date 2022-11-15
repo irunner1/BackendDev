@@ -1,0 +1,27 @@
+li, a, button {
+    color: black;
+}
+
+main {
+    background: white;
+}
+
+.block {
+    background: white;
+    border: 3px solid black;
+}
+.text {
+    color: black;
+}
+
+.header {
+    background-color: rgb(197, 197, 197);
+}
+
+.main_header {
+    background-color: rgb(197, 197, 197);
+}
+
+table {
+    background: black;
+}

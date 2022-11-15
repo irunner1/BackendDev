@@ -1,0 +1,22 @@
+li, a, button {
+    color: #ebebeb;
+}
+
+main {
+    background: #10101E;
+}
+
+.block {
+    background: #10101E;
+}
+.text {
+    color: #fff;
+}
+
+.header {
+    background-color: #24252A;
+}
+
+table {
+    background: white;
+}
