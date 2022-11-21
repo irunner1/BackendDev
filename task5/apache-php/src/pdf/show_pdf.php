@@ -52,7 +52,7 @@
                 ?>
                     <p>
                         <a href="download.php?id=<?php echo $row->id; ?>" target="_blank">
-                            <?php echo $row->filename; ?>
+                            <?php echo $row->filenamed; ?>
                         </a>
                     </p>
                 <?php } ?>

@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS goods (
 CREATE TABLE IF NOT EXISTS files (
     ID INT(10) NOT NULL AUTO_INCREMENT,
     title BLOB,
-    filename VARCHAR(20),
+    filenamed VARCHAR(20),
     PRIMARY KEY (ID)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
