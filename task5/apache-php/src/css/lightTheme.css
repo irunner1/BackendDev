@@ -4,7 +4,7 @@ li, button, .nav_link {
 
 .btn_link { 
     background-color: white;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 .link {
     color: black;
@@ -15,7 +15,7 @@ main {
 
 .block {
     background: white;
-    border: 3px solid black;
+    border: 2px solid black;
 }
 .text {
     color: black;
@@ -34,10 +34,10 @@ table {
 }
 
 .file-input label {
-    border: 3px solid black;
+    border: 2px solid black;
 }
 .file-input:hover label {
-    border: 3px solid #0088a9;
+    border: 2px solid #0088a9;
     transition: border 0.1s cubic-bezier(0.3, 0, 0.5, 1)
 
 }
