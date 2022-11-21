@@ -13,7 +13,7 @@
         <div class="block">
             <div class="text">Отправить файл</div>
             <br>
-            <form enctype="multipart/form-data" action="./upload_pdf.php" method="POST">
+            <!-- <form enctype="multipart/form-data" action="./upload_pdf.php" method="POST">
                 <div class="file-input">
                     <input name="userfile" type="file" id="file" class="file">
                     <label for="file">Выбрать файл</label>
@@ -30,15 +30,32 @@
             </div>
             <div class="text"> Файлы на сервере </div>
             <table cellspacing="0" , style="width:100%">
+               
+            </table> -->
+            <?php
+                $conn = new mysqli('mysql', 'user', 'password', 'appDB');
+            ?>
+            <form action="./upload_pdf.php" method="post" enctype="multipart/form-data">
+                <p>Загрузить картику</p>
+                <input type="file" name="pdf"><input type="submit" name="upload" value="Загрузить">
+            </form>
+            <br>
+            <div class="btn_link">
+                <a class="link" href="/index.php">На главную</a>
+            </div>
+               
                 <?php
-                    $scanned_directory = array_diff(scandir('./files'), array('..', '.'));
-                    if (count($scanned_directory) > 0) {
-                        foreach ($scanned_directory as $file) {
-                            echo "<tr><td><a class='table_link' href='./files/" . $file . "'>" . $file . "</a></td></tr>";
-                        }
-                    }
+                    $conn = new mysqli('mysql', 'user', 'password', 'appDB');
+                    $sql = "SELECT id, title FROM files ORDER BY id DESC";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_object($result)) {
                 ?>
-            </table>
+                    <p>
+                        <a href="download.php?id=<?php echo $row->id; ?>" target="_blank">
+                            <?php echo $row->filename; ?>
+                        </a>
+                    </p>
+                <?php } ?>
         </div>
     </main>
 </body>

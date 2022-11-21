@@ -21,6 +21,13 @@ CREATE TABLE IF NOT EXISTS goods (
     PRIMARY KEY (ID)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
+CREATE TABLE IF NOT EXISTS files (
+    ID INT(10) NOT NULL AUTO_INCREMENT,
+    title BLOB,
+    filename VARCHAR(20),
+    PRIMARY KEY (ID)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+
 INSERT INTO users (name, password)
 VALUES (
         'admin',
