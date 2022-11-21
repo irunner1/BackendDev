@@ -28,7 +28,7 @@ main {
 
 .block {
     background: #10101E;
-    width: 100vh;
+    width: 50%;
     padding: 15px 10px;
     border: 3px solid #fff;
     border-radius: 10px;
@@ -151,4 +151,33 @@ table tbody tr:nth-child(even){
     display: block;
     margin-left: auto;
     margin-right: auto 
+}
+
+.file {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.file-input label {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+}
+
+.file-input:hover label{
+    background:#0088a9;
+    color: white;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1)
 }

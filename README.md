@@ -13,4 +13,5 @@
     <li>html</li>
     <li>css</li>
     <li>sql</li>
+    <li>redis</li>
  </ul>

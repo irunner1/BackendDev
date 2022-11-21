@@ -1,9 +1,6 @@
 <?php
     session_start();
-    if (!isset($_SESSION["theme"]) ||
-        !isset($_SESSION["views"]) ||
-        !isset($_SESSION["login"]))
-    {
+    if (!isset($_SESSION["theme"]) || !isset($_SESSION["views"]) || !isset($_SESSION["login"])) {
         $_SESSION["theme"] = 0;
         $_SESSION["views"] = 0;
         $_SESSION["login"] = ' ';
@@ -14,8 +11,7 @@
         return $connection;
     }
     
-    function outputStatus($status, $message)
-    {
+    function outputStatus ($status, $message) {
         echo '{status: ' . $status . ', message: "' . $message . '"}';
     }
 ?>

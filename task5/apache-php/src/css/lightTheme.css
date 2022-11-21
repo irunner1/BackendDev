@@ -1,7 +1,14 @@
-li, a, button {
+li, button, .nav_link {
     color: black;
 }
 
+.btn_link { 
+    background-color: white;
+    border: 3px solid black;
+}
+.link {
+    color: black;
+}
 main {
     background: white;
 }
