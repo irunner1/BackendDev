@@ -153,6 +153,10 @@ table tbody tr:nth-child(even){
     margin-right: auto 
 }
 
+.file-input {
+    width: 20%;
+}
+
 .file {
     opacity: 0;
     width: 0.1px;
@@ -180,4 +184,8 @@ table tbody tr:nth-child(even){
     background:#0088a9;
     color: white;
     transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1)
+}
+
+.table_link {
+    color: black;
 }

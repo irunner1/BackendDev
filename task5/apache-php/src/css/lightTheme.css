@@ -32,3 +32,12 @@ main {
 table {
     background: black;
 }
+
+.file-input label {
+    border: 3px solid black;
+}
+.file-input:hover label {
+    border: 3px solid #0088a9;
+    transition: border 0.1s cubic-bezier(0.3, 0, 0.5, 1)
+
+}
