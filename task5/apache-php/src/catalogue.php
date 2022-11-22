@@ -20,7 +20,9 @@
         </nav>
     </header>
     <div>
-        <h1>Каталог</h1>
+        <div class="title">
+            <p class="title_text">Каталог</p>
+        </div>
         <?php
             require_once '_helper.php';
             $mysqli = openmysqli();

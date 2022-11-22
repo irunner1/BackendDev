@@ -13,32 +13,11 @@
         <div class="block">
             <div class="text">Отправить файл</div>
             <br>
-            <!-- <form enctype="multipart/form-data" action="./upload_pdf.php" method="POST">
-                <div class="file-input">
-                    <input name="userfile" type="file" id="file" class="file">
-                    <label for="file">Выбрать файл</label>
-                </div>
-                <br>
-                <div class="file-input">
-                    <input  type="submit" id="submit" class="file">
-                    <label for="submit">Отправить файл</label>
-                </div>
-            </form>
-            <br>
-            <div class="btn_link">
-                <a class="link" href="/index.php">На главную</a>
-            </div>
-            <div class="text"> Файлы на сервере </div>
-            <table cellspacing="0" , style="width:100%">
-               
-            </table> -->
             <?php
                 $conn = new mysqli('mysql', 'user', 'password', 'appDB');
             ?>
             <form action="./upload_pdf.php" method="post" enctype="multipart/form-data">
                 <p class="text">Загрузить картику</p>
-                <!-- <input type="file" name="pdf">
-                <input type="submit" name="upload" value="Загрузить"> -->
                 <div class="buttons">    
                     <div class="file-input">
                         <input name="pdf" type="file" id="file" class="file">

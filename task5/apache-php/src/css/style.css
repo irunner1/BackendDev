@@ -5,8 +5,8 @@
 }
 
 li, a, button {
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
     font-size: 16px;
     color: #ebebeb;
     text-decoration: none;
@@ -24,6 +24,9 @@ main {
 .link {
     text-align: center;
     display: block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
+    font-size: 15px;
 }
 
 .block {
@@ -37,6 +40,8 @@ main {
 .text {
     color: #fff;
     font-size: 28px;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 300;
 }
 
 .main_header {
@@ -118,7 +123,7 @@ input {
     color: #0088a9;
 }
 
-table{
+table {
     border: 1px solid #eee;
     table-layout: fixed;
     width: 70%;
@@ -132,7 +137,7 @@ table th {
     background: #efefef;
     border: 1px solid #dddddd;
 }
-table td{
+table td {
     padding: 5px 10px;
     border: 1px solid #eee;
     text-align: left;
@@ -159,11 +164,50 @@ table tbody tr:nth-child(even){
     width: 20%;
 }
 
+.table_link {
+    color: black;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px 0 20px 0;
+}
+
+.title {
+    width: 30vh;
+    padding: 35px 10px;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title_text {
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+    display: block;
+    color: #10101E;
+}
+
+.file-input {
+    width: 20%;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 100;
+    font-size: 15px;
+}
+
 .file {
     opacity: 0;
     width: 0.1px;
     height: 0.1px;
     position: absolute;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
+    font-size: 26px;
 }
 
 .file-input label {
@@ -186,15 +230,4 @@ table tbody tr:nth-child(even){
     background:#0088a9;
     color: white;
     transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1)
-}
-
-.table_link {
-    color: black;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 20px;
 }

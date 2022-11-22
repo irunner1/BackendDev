@@ -21,7 +21,9 @@
         </nav>
     </header>
     <div>
-        <h1>Список пользователей</h1>
+        <div class="title">
+            <p class="title_text">Список пользователей</p>
+        </div>
         <?php
             require_once '_helper.php';
             $mysqli = openmysqli();
