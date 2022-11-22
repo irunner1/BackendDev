@@ -3,6 +3,9 @@
     require_once $_SERVER['DOCUMENT_ROOT'] . '/session/build_header.php';
 ?>
 <html lang="ru">
+<head>
+    <title>Каталог товаров</title>
+</head>
 <body>
     <header class="header">
         <p class="text">Строительный магазин</p>

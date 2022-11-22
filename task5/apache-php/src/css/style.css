@@ -123,6 +123,8 @@ table{
     table-layout: fixed;
     width: 70%;
     margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 table th {
     font-weight: bold;

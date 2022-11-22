@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/session/build_header.php';
 <html lang="en">
 
 <head>
-    <title>Session Debug Page</title>
+    <title>Статус сессии</title>
 </head>
 
 <body>
