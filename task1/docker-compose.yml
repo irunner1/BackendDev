@@ -9,7 +9,7 @@ services:
     volumes:
       - ./server:/docker-entrypoint-initdb.d
     environment:
-      - MARIADB_ROOT_PASSWORD: example
+      MARIADB_ROOT_PASSWORD: "example"
   server:
     container_name: task1_server
     build: ./server
